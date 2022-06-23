@@ -1,5 +1,6 @@
 CREATE TABLE entries (
 entry_id serial PRIMARY KEY,
+place VARCHAR NOT NULL, 
 title VARCHAR NOT NULL,
 country VARCHAR NOT NULL,
 maps VARCHAR NOT NULL UNIQUE,
