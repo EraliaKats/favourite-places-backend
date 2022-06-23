@@ -27,8 +27,13 @@ const client = new Client(dbConfig);
 client.connect();
 
 app.get("/", async (req, res) => {
-  const dbres = await client.query('select * from categories');
-  res.json(dbres.rows);
+  try {
+    const dbres = await client.query('select * from entries');
+    res.status(200).json(dbres.rows)
+  } catch (error) {
+    res.status(500).send({ error: error, stack: error.stack });
+  }
+  ;
 });
 
 

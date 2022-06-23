@@ -1,0 +1,8 @@
+CREATE TABLE entries (
+entry_id serial PRIMARY KEY,
+title VARCHAR NOT NULL,
+country VARCHAR NOT NULL,
+maps VARCHAR NOT NULL UNIQUE,
+summary VARCHAR NOT NULL,
+image VARCHAR UNIQUE
+);
